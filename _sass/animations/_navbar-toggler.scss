@@ -1,0 +1,34 @@
+// Mobile Navigation Trigger Button Animations
+@keyframes navbar-toggler-inM{
+  50%{transform:rotate(0deg);}
+  100%{transform:rotate(45deg);}
+}
+
+@keyframes navbar-toggler-outM{
+  50%{transform:rotate(0deg);}
+  100%{transform:rotate(45deg);}
+}
+
+@keyframes navbar-toggler-inT{
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(8px) rotate(0deg); }
+  100% { transform: translateY(8px) rotate(135deg); }
+}
+
+@keyframes navbar-toggler-outT{
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(8px) rotate(0deg); }
+  100% { transform: translateY(8px) rotate(135deg); }
+}
+
+@keyframes navbar-toggler-inBtm{
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(0deg); }
+  100% { transform: translateY(-8px) rotate(135deg); }
+}
+
+@keyframes navbar-toggler-outBtm{
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(0deg); }
+  100% { transform: translateY(-8px) rotate(135deg); }
+}

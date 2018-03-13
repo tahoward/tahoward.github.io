@@ -59,7 +59,24 @@
           else {
             $('#navbarMain li.home-link a').addClass('active');
           }
-          console.log(location.pathname.split("/")[1]);
+      });
+    </script>
+    <script>
+      $(function() {
+      	var $toggler = $('.navbar-toggler');
+      	var $target = $('.navbar-collapse');
+        var $animation = $('.navbar-toggler-animated');
+      	$('.navbar-toggler').on('click', function() {
+      		if (!$target.hasClass('collapsing')) {
+                if ($animation.hasClass('active') || $animation.hasClass('inactive')) {
+                  $animation.toggleClass('active');
+                  $animation.toggleClass('inactive');
+                }
+                else {
+                  $animation.addClass('active');
+                }
+      		}
+        });
       });
     </script>
   </body>
