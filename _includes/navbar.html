@@ -12,34 +12,35 @@
         <div class="collapse navbar-collapse" id="navbarMain">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item home-link">
-              <a class="nav-link" href="{{ site.baseurl }}/">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link {% if page.url == '/' %}active{% endif %}" href="{{ site.baseurl }}/">Home <span class="sr-only">(current)</span></a>
             </li>
-            {% for page in site.pages %}
-            {% if page.title and page.hide != true %}
+            {% for pageItem in site.pages %}
+            {% if pageItem.title and pageItem.hide != true %}
             <li class="nav-item">
-              <a class="nav-link" href="{{ page.url | relative_url }}">
-                  {{ page.title }}
+              <a class="nav-link {% if page.url == pageItem.url %}active{% endif %}" href="{{ pageItem.url | relative_url }}">
+                  {{ pageItem.title }}
               </a>
             </li>
             {% endif %}
             {% endfor %}
+            {% assign splitUrl = page.url | split: '/' %}
             {% if site.theme_settings.portfolio %}
             <li class="nav-item">
-                <a class="nav-link" href="{{ site.baseurl }}/portfolio/">
+                <a class="nav-link {% if splitUrl[1] == 'portfolio' %}active{% endif %}" href="{{ site.baseurl }}/portfolio/">
                     Portfolio
                 </a>
             </li>
             {% endif %}
             {% if site.theme_settings.search %}
             <li class="nav-item">
-                <a class="nav-link" href="{{ site.baseurl }}/search/">
+                <a class="nav-link {% if splitUrl[1] == 'search' %}active{% endif %}" href="{{ site.baseurl }}/search/">
                     <i class="fa fa-search" aria-hidden="true"></i>
                 </a>
             </li>
             {% endif %}
             {% if site.theme_settings.tags %}
             <li class="nav-item">
-                <a class="nav-link" href="{{ site.baseurl }}/tags/">
+                <a class="nav-link {% if splitUrl[1] == 'tags' %}active{% endif %}" href="{{ site.baseurl }}/tags/">
                     <i class="fa fa-tags" aria-hidden="true"></i>
                 </a>
             </li>
