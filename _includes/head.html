@@ -18,6 +18,20 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/font-awesome.min.css"> -->
 
+    <!-- JQuery (used for bootstrap and jekyll search) -->
+    <script src="{{ site.baseurl }}/assets/js/jquery.min.js" ></script>
+
+    <script>
+      $(function() {
+          if ((location.pathname.split("/")[1]) !== ""){
+            $('#navbarMain a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
+          }
+          else {
+            $('#navbarMain li.home-link a').addClass('active');
+          }
+      });
+    </script>
+
     <!-- Google Fonts -->
     {% if site.theme_settings.google_fonts %}
     <link href="//fonts.googleapis.com/css?family={{ site.theme_settings.google_fonts }}" rel="stylesheet" type="text/css"> 

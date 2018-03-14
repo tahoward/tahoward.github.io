@@ -7,9 +7,6 @@
         {{ content }}
     </div>
     {% include footer.html %}
-
-    <!-- JQuery (used for bootstrap and jekyll search) -->
-    <script src="{{ site.baseurl }}/assets/js/jquery.min.js" ></script>
     
     <!-- Main JS (navbar.js and katex_init.js)-->
     <script defer=true src="{{ site.baseurl }}/assets/js/main.min.js"></script>
@@ -53,28 +50,18 @@
 
     <script>
       $(function() {
-          if ((location.pathname.split("/")[1]) !== ""){
-            $('#navbarMain a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
-          }
-          else {
-            $('#navbarMain li.home-link a').addClass('active');
-          }
-      });
-    </script>
-    <script>
-      $(function() {
       	var $toggler = $('.navbar-toggler');
       	var $target = $('.navbar-collapse');
         var $animation = $('.navbar-toggler-animated');
       	$('.navbar-toggler').on('click', function() {
       		if (!$target.hasClass('collapsing')) {
-                if ($animation.hasClass('active') || $animation.hasClass('inactive')) {
-                  $animation.toggleClass('active');
-                  $animation.toggleClass('inactive');
-                }
-                else {
-                  $animation.addClass('active');
-                }
+            if ($animation.hasClass('active') || $animation.hasClass('inactive')) {
+              $animation.toggleClass('active');
+              $animation.toggleClass('inactive');
+            }
+            else {
+              $animation.addClass('active');
+            }
       		}
         });
       });
